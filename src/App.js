@@ -8,20 +8,20 @@ import Resume from "./components/Resume"
 import Nav from "./components/Navigation"
 
 function App() {
-  const [section, setSection] = useState("about")
+  const [section, setSection] = useState("project")
 
   return (
     
     <>
-      <Header section={section} setSection={setSection} />
-      <Nav/>
-        <div className="App">
+     <Header section={section} setSection={setSection} />
+      <div>
+        <Nav></Nav>
+        {section === "about" && <AboutMe />}
+        {section === "project" && <Project />}
+        {section === "contact" && <Contact />}
+        {section === "resume" && <Resume />}
+      </div>
 
-          < AboutMe />
-          {section === "main" && < Main />}
-          < Resume />
-
-        </div>
       <Footer />
     </>
 
